@@ -100,9 +100,12 @@ class HistoryManager:
             for i, entry in enumerate(history):
                 timestamp_formatted = HistoryManager.format_timestamp(entry['timestamp'])
                 if entry['is_battle']:
-                    label = f"BATTLE: {entry['url'][:20]}... vs {entry.get('url_2', '?')[:20]}..."
+                    u1 = entry['url'] or '?'
+                    u2 = entry.get('url_2') or '?'
+                    label = f"BATTLE: {u1[:20]}... vs {u2[:20]}..."
                 else:
-                    label = f"{entry['url'][:30]}..."
+                    u = entry['url'] or 'Unknown'
+                    label = f"{u[:30]}..."
                 
                 with st.expander(f"{label} - {timestamp_formatted}"):
                     if entry['is_battle']:

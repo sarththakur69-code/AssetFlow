@@ -8,3 +8,4 @@ colorthief
 webdriver-manager
 python-dotenv
 fpdf
+reportlab
