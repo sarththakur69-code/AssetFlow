@@ -2,10 +2,6 @@
 
 **Intelligent Competitor Asset Extraction & Analysis System**
 
-[![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit)](https://streamlit.io)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
 > Scan any competitor website and extract visual assets, color palettes, typography, and AI-powered brand personality insights in seconds.
 
 ---

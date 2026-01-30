@@ -30,12 +30,21 @@ class AssetScraper:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         })
 
+        # Add reliable headless options
+        self.options.add_argument("--disable-dev-shm-usage")
+
     def _init_driver(self):
         if not self.driver:
-            self.driver = webdriver.Chrome(
-                service=Service(ChromeDriverManager().install()), 
-                options=self.options
-            )
+            # Check for Streamlit Cloud / Linux environment paths
+            if os.path.exists("/usr/bin/chromium") and os.path.exists("/usr/bin/chromedriver"):
+                self.options.binary_location = "/usr/bin/chromium"
+                service = Service("/usr/bin/chromedriver")
+            else:
+                # Local Windows/Mac fallback
+                self.options.binary_location = None
+                service = Service(ChromeDriverManager().install())
+                
+            self.driver = webdriver.Chrome(service=service, options=self.options)
 
     def scrape(self, start_url, max_pages=15, progress_callback=None):
         """
