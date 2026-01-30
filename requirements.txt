@@ -1,0 +1,10 @@
+streamlit
+beautifulsoup4
+selenium
+requests
+Pillow
+google-generativeai
+colorthief
+webdriver-manager
+python-dotenv
+fpdf

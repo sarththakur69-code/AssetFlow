@@ -1,0 +1,187 @@
+/* --- MIDNIGHT GLASS THEME --- */
+
+/* 1. Global Reset & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+.stApp {
+    background-color: #050505;
+    /* Deepest Black */
+    background-image: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #050505 60%);
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* 2. Sidebar - Glass Effect */
+[data-testid="stSidebar"] {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+h1 {
+    background: linear-gradient(135deg, #ffffff 0%, #a5a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 4. Buttons - Premium & Interactive */
+div.stButton>button {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+div.stButton>button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+div.stButton>button:active {
+    transform: scale(0.98);
+}
+
+/* Primary Button Action */
+div.stButton>button:focus {
+    border-color: #00f3ff;
+    box-shadow: 0 0 0 2px rgba(0, 243, 255, 0.2);
+}
+
+/* 5. Inputs - Clean & Minimal */
+.stTextInput>div>div>input {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.stTextInput>div>div>input:focus {
+    border-color: #00f3ff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 6. Cards / Containers (Glassmorphism helper) */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* 7. Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* 8. Utility: Gradient Text */
+.gradient-text {
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* 9. Metrics & Stats */
+[data-testid="stMetricValue"] {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #00f3ff;
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+/* 10. Skeleton Loader - Midnight Glass Style */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    animation: shimmer 2.5s infinite linear;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.02) 8%, rgba(255, 255, 255, 0.08) 18%, rgba(255, 255, 255, 0.02) 33%);
+    background-size: 1000px 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skeleton-text {
+    height: 16px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.skeleton-title {
+    height: 32px;
+    width: 60%;
+    margin-bottom: 24px;
+}
+
+.skeleton-card {
+    height: 250px;
+    width: 100%;
+}
+
+.skeleton-circle {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Grid Layouts for Skeletons */
+.skeleton-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skeleton-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
